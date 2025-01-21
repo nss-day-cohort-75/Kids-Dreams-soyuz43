@@ -35,10 +35,13 @@ Make sure your Developer Tools are open at all times while working on this proje
 Before you click the "Complete Assessment" button on the Learning Platform, add your answers below each question and make a commit.
 
 1. When a child is clicked on in the browser, which module contains the code that will execute on that event happening? Can you explain the algorithm of that logic?
-   > Your answer here
+   > `Main.js`. First a we use a `for` loop to set up an event listener on the `li` elements in the HTML. A callback function retrieves the data-type and data-wish attributes from the clicked element and checks if the data-type is "child" and if the data-wish attribute exists. If both evaluate to true then a `window.alert` is displayed with the child's name & wish.
+   
 2. In the **Pairings** module, why must the `findCelebrityMatch()` function be invoked inside the `for..of` loop that iterates the kids array?
-   > Your answer here
+   > If not invoked in the scope of the `for...of` loop the `findCelebrityMatch()` function would only find a match for the first `child`. This is because the value of `child` is directly attached to the index of the loop. Outside of it, the scope of the `child` variable is only the first `child`, and that value would be used for the entire array of celebrities. Effectively matching every celeb with the same child object.
+
 3. In the **CelebrityList** module, can you describe how the name of the sport that the celebrity plays can be displayed in the window alert text?
-   > Your answer here
+   >The name of the sport that the celebrity plays is displayed in the window alert text by accessing the `data-sport` attribute of the celebrity's list item element and including its value in the alert message.
+
 4. Can you describe, in detail, the algorithm that is in the `main` module?
-   > Your answer here
+   > The algorithm in the main module sets up the application's UI, generates the HTML for the kids and celebrities sections, and handles user interactions. It handles interactions by attaching `event listeners` to the `<li>` attributes that are dynamically rendered in the imported functions. These event handlers retrieve the `data-type` and `data-wish` or `data-sport` attributes from the clicked list item and display a `window.alert` with the corresponding information. 
